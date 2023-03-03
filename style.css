@@ -296,7 +296,8 @@ blockquote p {
     background-color: var(--bgColor);
     color: var(--accentColor);
     flex-grow: 1;
-    flex-basis: clamp(30rem, 25%, 55rem);
+    flex-basis: 30rem;
+    max-width: 40rem;
     border-radius: 10px;
     padding-bottom: 1rem;
 }
