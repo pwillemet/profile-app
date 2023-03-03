@@ -1,0 +1,375 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html *:where(*) {
+    padding: 0;
+    margin: 0;
+}
+
+.no-animation * {
+    animation-duration: 0ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+}
+
+:root {
+    --introRotationDuration: 300ms;
+    --introRotationRepeat: 5;
+    --introScaleDuration: calc(var(--introRotationDuration) * var(--introRotationRepeat));
+    --introPositionDelay: calc(var(--introScaleDuration) + 500ms);
+    --introPositionDuration: 1.5s;
+    --totalIntroDuration: calc(var(--introPositionDelay) + var(--introPositionDuration));
+    --finalIntroRight: calc(100vw / 2 - 160px);
+    --bgColor: hsl(257 96% 5%);
+    --accentColor: hsl(125, 10%, 95%);
+}
+
+@keyframes introposition {
+    from {
+        top: calc(100vh / 2 - 160px);
+        right: calc(100vw / 2 - 160px);
+    }
+    to {
+        top: 2em;
+        right: var(--finalIntroRight);
+    }
+}
+
+@keyframes introrotation {
+    from {
+        visibility: visible;
+        rotate: 0deg;
+    }
+    to {
+        visibility: visible;
+        rotate: 360deg;
+    }
+}
+
+@keyframes introscale {
+    from {
+        scale: 10;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes htmloverflow {
+    from {
+        overflow: hidden;
+    }
+    to {
+        overflow: auto;
+    }
+}
+
+@keyframes falling {
+    from {
+        translate: 0 -1em;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
+html {
+    animation: htmloverflow var(--totalIntroDuration);
+}
+
+body {
+    color: var(--accentColor);
+    font-family: 'Golos Text', sans-serif;
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+i {
+    color: var(--accentColor);
+}
+
+ul {
+    list-style-type: none;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+}
+
+blockquote::before {
+    content: "“";
+    font-size: 7.5rem;
+    float: left;
+}
+
+blockquote {
+    line-height: 1.5rem;
+    padding: 1em;
+    max-width: 65ch;
+    font-size: 1.2rem;
+}
+
+blockquote p {
+    margin-block: 1em;
+    text-indent: 2em;
+}
+
+.xl-only, .xxl-only {
+    display: none;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tags > li {
+    border-radius: 100vh;
+    background-color: var(--accentColor);
+    color: var(--bgColor);
+    padding-inline: 0.5rem;
+    padding-block: 0.25rem;
+}
+
+.page {
+    min-height: 100vh;
+    padding: 1em;
+}
+
+.page:nth-child(odd) {
+    background-color: var(--bgColor);
+}
+
+.page:nth-child(even) {
+    color: var(--bgColor);
+}
+
+.page:first-child {
+    padding-top: 400px;
+}
+
+.page:first-child > * {
+    opacity: 0;
+    animation: appear 500ms var(--totalIntroDuration) forwards;
+}
+
+#img-wrapper {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    top: calc(100vh / 2 - 160px);
+    right: calc(100vw / 2 - 160px);
+    width: clamp(0px, 75%, 320px);
+    background-color: var(--bgColor);
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+#img-wrapper.loaded {
+    animation:
+            appear 4s forwards,
+            introrotation var(--introRotationDuration) linear 0ms var(--introRotationRepeat),
+            introscale var(--introScaleDuration) cubic-bezier(0.85, 1.2, 0.85, 1.2),
+            introposition var(--introPositionDuration) var(--introPositionDelay) forwards;
+}
+
+.contacts {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2em;
+    color: inherit;
+    padding-inline: 1em;
+}
+
+.contacts a {
+    opacity: 0;
+}
+
+.contacts a:nth-child(1) {
+    animation:
+            falling 500ms var(--totalIntroDuration),
+            appear 750ms var(--totalIntroDuration) forwards;
+}
+.contacts a:nth-child(2) {
+    --delay: calc(var(--totalIntroDuration) + 300ms);
+    animation:
+            falling 500ms var(--delay),
+            appear 500ms var(--delay) forwards;
+}
+.contacts a:nth-child(3) {
+    --delay: calc(var(--totalIntroDuration) + 600ms);
+    animation:
+            falling 500ms var(--delay),
+            appear 500ms var(--delay) forwards;
+}
+.contacts a:nth-child(4) {
+    --delay: calc(var(--totalIntroDuration) + 900ms);
+    animation:
+            falling 500ms var(--delay),
+            appear 500ms var(--delay) forwards;
+}
+
+.intro {
+    text-align: center;
+}
+
+.intro__name {
+    font-family: 'Tilt Warp', cursive;
+    font-size: 3em;
+}
+
+.intro__role {
+    font-size: 2em;
+}
+
+.middle {
+    display: flex;
+    gap: 3em;
+}
+
+.presentation-quote {
+    margin-top: 3rem;
+}
+
+.logos {
+    display: none;
+    margin-top: 5rem;
+    align-self: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 4em;
+    row-gap: 6rem;
+}
+
+.logos > img {
+    height: 150px;
+}
+
+#disponibility {
+    margin-left: 3rem;
+    font-size: 1.5rem;
+}
+
+.page:first-child h2 {
+    text-decoration: underline;
+    text-align: left;
+}
+
+.contact-me {
+    margin-left: 3rem;
+    padding: .5rem .33rem;
+    border-radius: 7px;
+    background-color: var(--accentColor);
+    color: var(--bgColor);
+}
+
+.projets {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.projets > li {
+    -webkit-box-shadow: 1px 1px 4px 2px rgba(0,0,0,0.36);
+    box-shadow: 1px 1px 4px 2px rgba(0,0,0,0.36);
+    position: relative;
+    background-color: var(--bgColor);
+    color: var(--accentColor);
+    flex-grow: 1;
+    flex-basis: clamp(30rem, 25%, 55rem);
+    border-radius: 10px;
+    padding-bottom: 1rem;
+}
+
+.projets time {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.projets h3 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.projets p {
+    margin-block: 1.5rem;
+    padding-inline: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.projets img {
+    display: block;
+    width: 100%;
+}
+
+.projets .tags {
+    padding-inline: 0.5rem;
+}
+
+@media(min-width: 780px) {
+    :root {
+        --finalIntroRight: 2em;
+    }
+
+    .page {
+        padding-right: 400px;
+    }
+
+    .page:first-child {
+        padding-top: 2em;
+    }
+
+    #img-wrapper {
+        position: fixed;
+    }
+
+    .intro {
+        text-align: right;
+    }
+
+    .intro__name {
+        font-family: 'Tilt Warp', cursive;
+        font-size: 6em;
+    }
+}
+
+@media(min-width: 1725px) {
+    .logos {
+        display: flex;
+    }
+}
+
+@media(min-width: 1859px) {
+    .xl-only {
+        display: initial;
+    }
+}
+
+@media(min-width: 2346px) {
+    .xxl-only {
+        display: initial;
+    }
+}

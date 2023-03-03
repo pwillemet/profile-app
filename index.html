@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Pierric Willemet" />
+    <meta name="description" content="Pierric Willemet presentation web site" />
+    <meta name="keywords" content="profile, developer, freelance, fullstack, HTML, CSS, JavaScript, Angular, React, Vue, Svelte, Java, Node, NodeJS, Spring, Keycloak, GraphQL">
+    <title>Pierric Willemet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e101ca1074.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="animation">
+    <div id="img-wrapper">
+      <img src="public/profile.png" alt="Portrait de Pierric WILLEMET" id="img-profile" onload="this.parentElement.className='loaded'"/>
+      <div class="contacts">
+        <a href="https://www.linkedin.com/in/pierric-willemet-90aa86177/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/pwillemet/" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://ludosphere.fr/@pwillemet" title="Mastodon"><i class="fa-brands fa-mastodon"></i></a>
+        <a href="mailto:pierric.willemet@gmail.com" title="Mail"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <main>
+      <div class="page">
+        <div class="intro">
+          <h1 class="intro__name">Pierric Willemet</h1>
+          <p class="intro__role">Développeur Freelance Fullstack - Tech Lead</p>
+        </div>
+        <div class="middle">
+          <blockquote class="presentation-quote">
+            <p>
+            Expert en développement web avec 8 ans d'expériences, je maîtrise les compétences permettant de créer des applications web complètes,
+              de la conception à la mise en production.<br/>
+            Je suis familier des frameworks Angular, React, Vue.js ou Svelte, ainsi que des technologies backends NodeJs et Java Spring-Boot.
+            </p>
+            <p>
+              En tant que développeur fullstack, j'utilise régulièrement de nombreuses technologies telles que GraphQL,
+              MongoDB, PostgreSQL, Keycloak, Hasura, NGiNX...
+            </p>
+            <p>
+              Sur le plan personnel, je suis un grand fan de jeu de société et tout particulièrement de Mahjong&nbsp;🀄️,
+              et j'apprécie énormément les énigmes ludiques !
+            </p>
+          </blockquote>
+          <div class="logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Angular Logo" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" alt="Vue.js Logo" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg" alt="Svelte Logo" />
+            <img class="xl-only" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="NodeJs Logo" />
+            <img class="xxl-only" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg" alt="Spring Logo" />
+            <img class="xxl-only" src="https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg" alt="GraphQL Logo" />
+  <!--          <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="MongoDB Logo" />-->
+  <!--          <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL Logo" />-->
+  <!--          <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Keycloak_Logo.png" alt="Keycloak Logo" />-->
+  <!--          <img src="https://hasura.io/brand-assets/hasura-icon-primary.svg" alt="Hasura Logo" />-->
+  <!--          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg" alt="NGiNX Logo" />-->
+          </div>
+        </div>
+        <h2 class="disponibility">Disponibilité</h2>
+        <p>
+          <span id="disponibility"></span>
+          <a class="contact-me" href="mailto:pierric.willemet@gmail.com">Me contacter</a>
+        </p>
+      </div>
+      <div class="page">
+        <h2>Réalisations publiques</h2>
+        <ul class="projets">
+          <li>
+            <a href="https://breizhmahjong.fr/bmjc/">
+              <article>
+                <h3>
+                  BMJC
+                </h3>
+                <time datetime="2018-01-01">2018</time>
+                <img src="public/bmjc.png" alt="Prévisualisation du projet BMJC"/>
+                <p>Score et classement du club BMJ</p>
+                <ul class="tags">
+                  <li>Bootstrap</li>
+                  <li>PHP</li>
+                </ul>
+              </article>
+            </a>
+          </li>
+          <li>
+            <a href="https://breizhmahjong.fr/bmjh2/?hand=%2222s333m456p444s%205v555vs%22">
+              <article>
+                <h3>
+                  BMJH2
+                </h3>
+                <time datetime="2019-01-01">2019</time>
+                <img src="public/bmjh2.png" alt="Prévisualisation du projet BMJH2"/>
+                <p>Évaluation automatique de main de mahjong</p>
+                <ul class="tags">
+                  <li>Angular</li>
+                </ul>
+              </article>
+            </a>
+          </li>
+          <li>
+            <a href="https://knotes.pwillemet.fr">
+              <article>
+                <h3>
+                  KNotes
+                </h3>
+                <time datetime="2022-01-01">2022</time>
+                <img src="public/knotes.png" alt="Prévisualisation du projet KNotes"/>
+                <p>Gestionnaire de notes au format markdown</p>
+                <ul class="tags">
+                  <li>Vue 3</li>
+                  <li>NGiNX</li>
+                </ul>
+              </article>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
